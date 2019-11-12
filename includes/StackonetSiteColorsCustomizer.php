@@ -41,7 +41,7 @@ class StackonetSiteColorsCustomizer {
 				'settings'    => 'shapla_primary_color',
 				'label'       => __( 'Primary Color', 'stackonet-site-colors' ),
 				'description' => __( 'A primary color is the color displayed most frequently across your site.', 'stackonet-site-colors' ),
-				'default'     => '#00d1b2',
+				'default'     => '#2196f3',
 				'priority'    => 10,
 			],
 			[

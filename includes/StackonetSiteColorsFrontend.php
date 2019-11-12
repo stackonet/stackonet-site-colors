@@ -40,7 +40,7 @@ class StackonetSiteColorsFrontend {
 		$on_secondary      = static::find_color_invert( $secondary );
 		$surface           = get_theme_mod( 'shapla_surface_color', '#ffffff' );
 		$on_surface        = static::find_color_invert( $surface );
-		$error             = get_theme_mod( 'shapla_error_color', '#6200ee' );
+		$error             = get_theme_mod( 'shapla_error_color', '#b00020' );
 		$on_error          = static::find_color_invert( $error );
 		list( $r, $g, $b ) = static::find_rgb_color( $on_surface );
 		$text_primary   = sprintf( "rgba(%s, %s, %s, 0.87)", $r, $g, $b );
