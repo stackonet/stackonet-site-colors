@@ -31,36 +31,62 @@ class StackonetSiteColorsFrontend {
 	 * Stackonet inline color system
 	 */
 	public function customize_colors() {
-		$primary           = get_theme_mod( 'shapla_primary_color', '#2196f3' );
-		$primary_variant   = static::adjust_color_brightness( $primary, - 25 );
-		$on_primary        = static::find_color_invert( $primary );
-		$secondary         = get_theme_mod( 'shapla_secondary_color', '#6200ee' );
+		$primary         = get_theme_mod( 'shapla_primary_color', '#00d1b2' );
+		$primary_variant = static::adjust_color_brightness( $primary, - 25 );
+		$on_primary      = static::find_color_invert( $primary );
+		list( $r, $g, $b ) = static::find_rgb_color( $primary );
+		$primary_alpha = sprintf( "rgba(%s, %s, %s, 0.25)", $r, $g, $b );
+
+		$secondary         = get_theme_mod( 'shapla_secondary_color', '#9c27b0' );
 		$secondary         = ! empty( $secondary ) ? $secondary : $primary;
 		$secondary_variant = static::adjust_color_brightness( $secondary, - 25 );
 		$on_secondary      = static::find_color_invert( $secondary );
-		$surface           = get_theme_mod( 'shapla_surface_color', '#ffffff' );
-		$on_surface        = static::find_color_invert( $surface );
-		$error             = get_theme_mod( 'shapla_error_color', '#b00020' );
-		$on_error          = static::find_color_invert( $error );
+		list( $r, $g, $b ) = static::find_rgb_color( $secondary );
+		$secondary_alpha = sprintf( "rgba(%s, %s, %s, 0.25)", $r, $g, $b );
+
+		$success    = get_theme_mod( 'shapla_success_color', '#48c774' );
+		$on_success = static::find_color_invert( $success );
+		list( $r, $g, $b ) = static::find_rgb_color( $success );
+		$success_alpha = sprintf( "rgba(%s, %s, %s, 0.25)", $r, $g, $b );
+
+		$error    = get_theme_mod( 'shapla_error_color', '#f14668' );
+		$on_error = static::find_color_invert( $error );
+		list( $r, $g, $b ) = static::find_rgb_color( $error );
+		$error_alpha = sprintf( "rgba(%s, %s, %s, 0.25)", $r, $g, $b );
+
+		$surface    = get_theme_mod( 'shapla_surface_color', '#ffffff' );
+		$on_surface = static::find_color_invert( $surface );
 		list( $r, $g, $b ) = static::find_rgb_color( $on_surface );
+
 		$text_primary   = sprintf( "rgba(%s, %s, %s, 0.87)", $r, $g, $b );
 		$text_secondary = sprintf( "rgba(%s, %s, %s, 0.54)", $r, $g, $b );
+		$text_hint      = sprintf( "rgba(%s, %s, %s, 0.38)", $r, $g, $b );
+		$text_disabled  = sprintf( "rgba(%s, %s, %s, 0.38)", $r, $g, $b );
 		$text_icon      = sprintf( "rgba(%s, %s, %s, 0.38)", $r, $g, $b );
 		?>
         <style type="text/css" id="shapla-colors-system">
             :root {
                 --shapla-primary: <?php echo $primary; ?>;
-                --shapla-primary-variant: <?php echo $primary_variant; ?>;
                 --shapla-on-primary: <?php echo $on_primary; ?>;
+                --shapla-primary-variant: <?php echo $primary_variant; ?>;
+                --shapla-primary-alpha: <?php echo $primary_alpha; ?>;
                 --shapla-secondary: <?php echo $secondary; ?>;
-                --shapla-secondary-variant: <?php echo $secondary_variant; ?>;
                 --shapla-on-secondary: <?php echo $on_secondary; ?>;
-                --shapla-surface: <?php echo $surface; ?>;
-                --shapla-on-surface: <?php echo $on_surface; ?>;
+                --shapla-secondary-variant: <?php echo $secondary_variant; ?>;
+                --shapla-secondary-alpha: <?php echo $secondary_alpha; ?>;
+                --shapla-success: <?php echo $success; ?>;
+                --shapla-on-success: <?php echo $on_success; ?>;
+                --shapla-success-alpha: <?php echo $success_alpha; ?>;
                 --shapla-error: <?php echo $error; ?>;
                 --shapla-on-error: <?php echo $on_error; ?>;
+                --shapla-error-alpha: <?php echo $error_alpha; ?>;
+                --shapla-surface: <?php echo $surface; ?>;
+                --shapla-on-surface: <?php echo $on_surface; ?>;
+                --shapla-background: <?php echo $surface; ?>;
                 --shapla-text-primary: <?php echo $text_primary; ?>;
                 --shapla-text-secondary: <?php echo $text_secondary; ?>;
+                --shapla-text-hint: <?php echo $text_hint; ?>;
+                --shapla-text-disabled: <?php echo $text_disabled; ?>;
                 --shapla-text-icon: <?php echo $text_icon; ?>;
             }
         </style>

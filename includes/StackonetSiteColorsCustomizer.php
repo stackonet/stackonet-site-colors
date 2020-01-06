@@ -41,14 +41,14 @@ class StackonetSiteColorsCustomizer {
 				'settings'    => 'shapla_primary_color',
 				'label'       => __( 'Primary Color', 'stackonet-site-colors' ),
 				'description' => __( 'A primary color is the color displayed most frequently across your site.', 'stackonet-site-colors' ),
-				'default'     => '#2196f3',
+				'default'     => '#00d1b2',
 				'priority'    => 10,
 			],
 			[
 				'settings'    => 'shapla_secondary_color',
 				'label'       => __( 'Secondary Color', 'shapla' ),
 				'description' => __( 'Color for Links, Actions buttons, Highlighting text', 'shapla' ),
-				'default'     => '#6200ee',
+				'default'     => '#9c27b0',
 				'priority'    => 20,
 			],
 			[
@@ -59,11 +59,18 @@ class StackonetSiteColorsCustomizer {
 				'priority'    => 30,
 			],
 			[
+				'settings'    => 'shapla_success_color',
+				'label'       => __( 'Success Color', 'shapla' ),
+				'description' => __( 'Color for success in components.', 'shapla' ),
+				'default'     => '#48c774',
+				'priority'    => 40,
+			],
+			[
 				'settings'    => 'shapla_error_color',
 				'label'       => __( 'Error Color', 'shapla' ),
 				'description' => __( 'Color for error in components.', 'shapla' ),
-				'default'     => '#b00020',
-				'priority'    => 40,
+				'default'     => '#f14668',
+				'priority'    => 50,
 			]
 		];
 
